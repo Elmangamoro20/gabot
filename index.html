@@ -72,7 +72,7 @@
     .empty-state p { font-size: 0.95rem; color: #5A6A7A; max-width: 320px; line-height: 1.45; }
     .suggestions {
       display: flex; flex-wrap: wrap; gap: 8px;
-      justify-content: center; margin-top: 12px; max-width: 380px;
+      justify-content: center; margin-top: 12px; max-width: 400px;
     }
     .suggestion {
       background: var(--blanco);
@@ -97,7 +97,7 @@
     }
     #messages:empty { display: none; }
     .message {
-      max-width: 88%;
+      max-width: 90%;
       padding: 12px 16px;
       border-radius: 18px;
       font-size: 0.95rem;
@@ -210,7 +210,7 @@
   </header>
 
   <div class="offtopic-banner" id="offtopicBanner">
-    ⚠️ Solo respondo preguntas sobre el Taller de Robótica GABOT Kids. ¡Preguntame sobre los talleres, niveles o cómo inscribirte!
+    ⚠️ Solo respondo preguntas sobre el Taller de Robótica GABOT Kids. ¡Preguntame sobre los talleres, niveles, proyectos o cómo inscribirte!
   </div>
 
   <div class="chat-wrapper">
@@ -227,11 +227,11 @@
         </svg>
       </div>
       <h2>¡Hola! Soy GABOT AI 🤖</h2>
-      <p>Tu asistente del Taller de Robótica Educativa. Preguntame lo que quieras sobre nuestros talleres, niveles, profes o inscripciones.</p>
+      <p>Tu asistente del Taller de Robótica Educativa. Preguntame lo que quieras sobre nuestros talleres, niveles, proyectos o inscripciones.</p>
       <div class="suggestions">
         <button class="suggestion" onclick="askSuggestion('¿Qué es GABOT Kids?')">¿Qué es GABOT Kids?</button>
         <button class="suggestion" onclick="askSuggestion('¿Cuáles son los niveles?')">Niveles de edad</button>
-        <button class="suggestion" onclick="askSuggestion('Mi hijo tiene 4 años')">Mi hijo de 4 años</button>
+        <button class="suggestion" onclick="askSuggestion('¿Qué proyectos hacen?')">Proyectos</button>
         <button class="suggestion" onclick="askSuggestion('¿Dónde queda?')">Ubicación</button>
         <button class="suggestion" onclick="askSuggestion('¿Cuánto cuesta?')">Precio</button>
         <button class="suggestion" onclick="askSuggestion('Contacto')">Contacto</button>
@@ -255,31 +255,37 @@
 
   <script>
     const respuestas = {
-      queEs: "¡Claro! Te cuento 😊\n\n🤖 **GABOT Kids** es un Taller de Robótica Educativa para niños y niñas de **3 a 12 años** en Avellaneda.\n\nAcá los chicos diseñan, construyen y programan robots mientras desarrollan creatividad, pensamiento lógico y habilidades para el futuro.\n\n💡 La mejor forma de aprender es **haciendo**. Cada encuentro es una aventura donde construyen robots, resuelven desafíos, programan movimientos y trabajan en equipo.\n\nNo hace falta tener conocimientos previos. Solo se necesita:\n• Curiosidad\n• Ganas de crear\n• Muchas ganas de divertirse 🚀\n\n¡Inscripciones abiertas!",
+      queEs: "¡Claro! Te cuento 😊\n\n🤖 **GABOT Kids** es un Taller de Robótica Educativa para niños y niñas de **3 a 12 años** en Avellaneda.\n\nNuestros talleres están pensados para que los chicos aprendan robótica, programación y tecnología de una forma divertida, creativa y práctica.\n\nEn cada encuentro construyen proyectos, resuelven desafíos y desarrollan habilidades como el pensamiento lógico, la creatividad, el trabajo en equipo y la resolución de problemas, siempre aprendiendo a través del juego.\n\nNo hace falta tener conocimientos previos. ¡Solo curiosidad y ganas de divertirse! 🚀\n\n¡Inscripciones abiertas!",
 
-      niveles: "Tenemos dos niveles según la edad 📚\n\n🟢 **Robótica Inicial (3 a 5 años)**\nMetodología de Robótica **Desenchufada**\nAntes de programar, los peques imaginan, construyen y descubren. Usamos juegos, cuentos y piezas grandes y seguras. Todo sin pantallas. Se desarrolla la creatividad, motricidad fina, comunicación y resolución de problemas.\n\n🔵 **Robótica y Programación (6 a 12 años)**\nMetodología de Robótica **Enchufada**\nLos chicos construyen robots, los programan y resuelven desafíos. Desarrollan pensamiento lógico, creatividad, autonomía y habilidades digitales para el futuro.\n\n¿Querés que te cuente más de algún nivel? 😊",
+      niveles: "Tenemos dos niveles según la edad 📚\n\n🟢 **Robótica Inicial (3 a 5 años)** – Metodología **Desenchufada**\nA través de juegos, historias, desafíos y materiales de construcción, los chicos desarrollan el pensamiento lógico, la creatividad y la resolución de problemas **sin utilizar pantallas**. Luego incorporan de forma gradual sus primeros conceptos de programación y exploran kits adaptados a su edad.\n\n🔵 **Robótica y Programación (6 a 12 años)** – Metodología **Enchufada**\nLos chicos construyen proyectos con kits educativos y aprenden programación de manera práctica y divertida. En cada clase diseñan, construyen, programan y ponen a prueba sus propios proyectos.\n\n¿Querés que te explique más de alguna de las dos metodologías? 😊",
 
-      edad3a5: "¡Perfecto! 🟢\n\nPara un niño o niña de **3 a 5 años** le corresponde el nivel **Robótica Inicial** (metodología desenchufada).\n\nEn este nivel:\n• Exploran la robótica con juegos, cuentos y construcciones\n• Usan piezas grandes y seguras\n• No usan pantallas\n• Desarrollan creatividad, motricidad fina, comunicación y resolución de problemas\n\nEs un espacio lúdico, divertido y adaptado a su edad. ¡Les encanta! 😊\n\n¿Querés el contacto para consultar horarios o inscribirlo?",
+      desenchufada: "🟢 **Robótica Desenchufada (3 a 5 años)**\n\nEs la propuesta pensada especialmente para los más peques.\n\nA través de **juegos, historias, desafíos y materiales de construcción**, los chicos desarrollan:\n• Pensamiento lógico\n• Creatividad\n• Resolución de problemas\n\n**Todo sin pantallas.**\n\nLuego, de forma gradual, incorporan sus primeros conceptos de programación y exploran kits de robótica educativa adaptados a su edad, siempre aprendiendo mediante el juego y la experimentación.\n\n¡Es un espacio súper lúdico y seguro para ellos! 😊",
 
-      edad6a12: "¡Genial! 🔵\n\nPara un niño o niña de **6 a 12 años** le corresponde el nivel **Robótica y Programación** (metodología enchufada).\n\nEn este nivel:\n• Construyen robots\n• Los programan\n• Resuelven desafíos y misiones\n• Desarrollan pensamiento lógico, creatividad, autonomía y habilidades digitales\n\n¡Se preparan para el futuro jugando! 🚀\n\n¿Querés el contacto para consultar horarios o inscribirlo?",
+      enchufada: "🔵 **Robótica Enchufada (6 a 12 años)**\n\nLos chicos construyen proyectos con kits educativos y aprenden programación de manera práctica y divertida.\n\nEn cada clase:\n• Diseñan\n• Construyen\n• Programan\n• Ponen a prueba sus propios proyectos\n\nDesarrollan habilidades como el **pensamiento computacional**, la creatividad, el trabajo en equipo y la resolución de desafíos tecnológicos.\n\n¡Acá los robots cobran vida gracias a ellos! 🚀",
 
-      profes: "¡Conocé a los profes! 👨‍🏫👩‍🏫\n\n**Gabriel**\nLic. en Enseñanzas con Nuevas Tecnologías, Profesor de nivel primario y especialista en Robótica Educativa.\nApasionado por la tecnología y la innovación. Acompaña a los chicos a desarrollar creatividad, pensamiento lógico y habilidades para resolver problemas con proyectos prácticos y divertidos.\n\n**Gimena**\nDocente Bilingüe de Nivel Inicial y formadora en metodología de robótica desenchufada.\nDiseña propuestas lúdicas motivadoras que fomentan la curiosidad, la creatividad y el trabajo en equipo, adaptadas a cada etapa del desarrollo infantil.\n\n¡Son geniales! 🌟",
+      edad3a5: "¡Perfecto para esa edad! 🟢\n\nUn niño o niña de **3 a 5 años** entra en el nivel **Robótica Inicial** (metodología desenchufada).\n\nTrabajan con juegos, cuentos, piezas grandes y seguras, **sin pantallas**. Desarrollan creatividad, motricidad fina, pensamiento lógico y resolución de problemas de forma muy divertida.\n\nDespués van incorporando sus primeros conceptos de programación de manera gradual.\n\n¡Les encanta! ¿Querés el contacto para consultar? 😊",
 
-      ubicacion: "📍 **Ubicación de GABOT Kids:**\n\nPalaá 540, Dpto D\nAvellaneda, Buenos Aires\n\n¡Estamos en pleno Avellaneda! 😊",
+      edad6a12: "¡Genial! 🔵\n\nPara **6 a 12 años** le corresponde el nivel **Robótica y Programación** (metodología enchufada).\n\nAcá construyen robots y proyectos con kits, programan, resuelven desafíos y desarrollan pensamiento computacional, creatividad y trabajo en equipo.\n\nHacen cosas como casas domóticas, robots que saludan, comederos automáticos y mucho más.\n\n¿Querés que te cuente algunos proyectos o el contacto? 🚀",
 
-      contacto: "📞 **Contacto de GABOT Kids:**\n\n• WhatsApp: **11 6977 4483**\n• Email: **gabotkids@gmail.com**\n• Dirección: Palaá 540, Dpto D - Avellaneda, Buenos Aires\n• Web: https://www.gabotkids.com/\n\n¡Escribinos por WhatsApp que te respondemos rápido! 💬",
+      proyectos: "🛠️ **Algunos de los proyectos que hacen los chicos:**\n\n🏠 **Casa Domótica** – Con IA para reconocer quién puede entrar y automatizar la puerta\n\n🐾 **Comedero Automático** – Detecta el animal y dispensa el alimento\n\n🗑️ **Cesto Inteligente** – Usa IA para clasificar residuos reciclables y no reciclables\n\n🤖 **Robot Amigable** – Reconoce personas y las saluda\n\n🌙 **Explorador Lunar** – Vehículo que se desplaza solo y detecta obstáculos\n\n📦 **Recolector de papeles** – Controlado por APP para recolectar residuos\n\n💡 **Lámpara automática** – Se enciende sola cuando se hace de noche\n\n🚨 **Alarma anti intrusos** – Detecta movimiento y enciende la alarma\n\n🌱 **Jardín Inteligente** – Mide la humedad del suelo y muestra caritas en una matriz LED\n\n⚽ **Contador de goles** – Con sensor ultrasónico y pantalla LCD\n\n¡Y muchos más! Cada proyecto es una aventura 🚀",
 
-      inscripciones: "¡Inscripciones **abiertas**! 🎉\n\nPodés consultar o inscribirte de estas formas:\n\n📱 WhatsApp: **11 6977 4483**\n📧 Email: **gabotkids@gmail.com**\n🌐 Web: https://www.gabotkids.com/ (botón CONSULTAR)\n\nNo hace falta tener conocimientos previos. ¡Solo ganas de aprender y divertirse! 🚀",
+      profes: "¡Conocé a los profes! 👨‍🏫👩‍🏫\n\n**Gabriel**\nLic. en Enseñanzas con Nuevas Tecnologías, Profesor de nivel primario y especialista en Robótica Educativa. Apasionado por la tecnología y la innovación.\n\n**Gimena**\nDocente Bilingüe de Nivel Inicial y formadora en metodología de robótica desenchufada. Diseña propuestas lúdicas motivadoras adaptadas a cada etapa.\n\n¡Son geniales y los chicos los adoran! 🌟",
+
+      ubicacion: "📍 **Ubicación de GABOT Kids:**\n\n**Palaá 540, Dpto D**\nAvellaneda, Buenos Aires\n\nEstamos en pleno Avellaneda.\n\nSi necesitás indicaciones de cómo llegar, escribinos por WhatsApp al **11 6977 4483** y te ayudamos con la mejor forma de llegar según desde dónde vengas. 😊",
+
+      contacto: "📞 **Contacto de GABOT Kids:**\n\n• WhatsApp: **11 6977 4483**\n• Instagram: **@gabotkids**\n• Email: **gabotkids@gmail.com**\n• Web: **www.gabotkids.com**\n• Dirección: Palaá 540, Dpto D - Avellaneda\n\n¡Escribinos por WhatsApp que te respondemos rápido! 💬",
+
+      inscripciones: "¡Inscripciones **abiertas**! 🎉\n\nPodés consultar o inscribirte por:\n\n📱 WhatsApp: **11 6977 4483**\n📸 Instagram: **@gabotkids**\n📧 Email: **gabotkids@gmail.com**\n🌐 Web: www.gabotkids.com\n\nNo hace falta tener conocimientos previos. ¡Solo ganas de aprender y divertirse! 🚀",
 
       precio: "💰 **Sobre el precio / costo:**\n\nEl valor de las clases lo tenés que consultar directamente con nosotros, porque puede variar según el nivel y la cantidad de encuentros.\n\n📱 Escribinos por WhatsApp al **11 6977 4483** y te pasamos toda la información actualizada.\n\n¡Estamos para ayudarte! 😊",
 
-      queHacemos: "En cada taller los chicos pueden:\n\n🔧 Construir robots educativos\n🎯 Resolver desafíos\n💡 Inventar sus propios proyectos\n💻 Aprender programación de manera fácil y divertida\n🏆 Participar en misiones y competencias\n🧠 Resolver problemas usando la creatividad\n\nTodo mientras se divierten y desarrollan habilidades para el futuro. ¡Es una aventura! ✨",
+      queHacemos: "En cada taller los chicos:\n\n🔧 Construyen robots y proyectos\n🎯 Resuelven desafíos\n💡 Inventan sus propias ideas\n💻 Aprenden programación de forma divertida\n🏆 Participan en misiones\n🧠 Desarrollan pensamiento crítico, computacional y trabajo en equipo\n\nTodo a través del juego y la experimentación. ¡Es una aventura! ✨",
 
-      porque: "¿Por qué elegir GABOT Kids? 🌟\n\nPorque somos mucho más que un taller. Acá los chicos:\n\n✨ **Experimentan**\nToman contacto directo con herramientas y piezas reales, transformando sus ideas en algo concreto que pueden tocar y mover.\n\n😲 **Se sorprenden**\nViven la emoción de ver cómo un robot cobra vida gracias a su esfuerzo, reforzando su confianza y autoestima.\n\n💪 **Se equivocan**\nEntienden que el error es parte del proceso creativo. Aprenden a buscar nuevas soluciones y a no rendirse.\n\n¡Construimos el futuro jugando! 🚀",
+      porque: "¿Por qué elegir GABOT Kids? 🌟\n\nPorque desarrollamos habilidades **STEAM** (Science, Technology, Engineering, Art, Mathematics) y habilidades para el futuro:\n\n• Pensamiento crítico\n• Resolución de problemas\n• Trabajo colaborativo\n• Pensamiento computacional\n\nLos chicos experimentan, se sorprenden y aprenden que equivocarse es parte del proceso creativo.\n\n¡Construimos el futuro jugando! 🚀",
 
-      horario: "📅 Sobre los **horarios**:\n\nLos horarios pueden variar según el grupo y la demanda.\n\nTe recomiendo consultar directamente por WhatsApp al **11 6977 4483** para que te digan los días y horarios disponibles según la edad de tu hijo/a.\n\n¡Te esperamos! 😊",
+      horario: "📅 Sobre los **horarios**:\n\nLos horarios pueden variar según el grupo y la demanda.\n\nTe recomiendo consultar por WhatsApp al **11 6977 4483** para que te digan los días y horarios disponibles según la edad de tu hijo/a.\n\n¡Te esperamos! 😊",
 
-      todo: "📋 **Toda la info de GABOT Kids:**\n\n🤖 **Qué es:** Taller de Robótica Educativa para niños y niñas de 3 a 12 años en Avellaneda. Diseñan, construyen y programan robots mientras desarrollan creatividad y pensamiento lógico.\n\n📍 **Ubicación:** Palaá 540, Dpto D - Avellaneda, Buenos Aires\n\n👨‍🏫 **Los profes:**\n• Gabriel (especialista en Robótica Educativa)\n• Gimena (Docente de Nivel Inicial y robótica desenchufada)\n\n📚 **Niveles:**\n• 3 a 5 años → Robótica Inicial (sin pantallas)\n• 6 a 12 años → Robótica y Programación\n\n📞 **Contacto:**\nWhatsApp: 11 6977 4483\nEmail: gabotkids@gmail.com\nWeb: www.gabotkids.com\n\n¡Inscripciones abiertas! 🎉"
+      todo: "📋 **Toda la info de GABOT Kids:**\n\n🤖 Taller de Robótica Educativa para niños y niñas de **3 a 12 años** en Avellaneda.\n\n📍 **Dirección:** Palaá 540, Dpto D - Avellaneda\n\n🟢 **3 a 5 años** → Robótica Desenchufada (sin pantallas)\n🔵 **6 a 12 años** → Robótica Enchufada (construcción + programación)\n\n🛠️ Hacen proyectos como Casa Domótica, Robot Amigable, Cesto Inteligente, Explorador Lunar y muchos más.\n\n📞 **Contacto:**\nWhatsApp: 11 6977 4483\nInstagram: @gabotkids\nEmail: gabotkids@gmail.com\nWeb: www.gabotkids.com\n\n¡Inscripciones abiertas! 🎉"
     };
 
     function detectarRespuesta(pregunta) {
@@ -287,37 +293,37 @@
         .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
         .replace(/[¿?¡!.,]/g, " ");
 
-      // Detectar edades específicas
-      const tieneEdad3a5 = /\b(3|4|5)\s*años?\b/.test(p) || p.includes("tres años") || p.includes("cuatro años") || p.includes("cinco años") || p.includes("3 a 5") || p.includes("inicial");
-      const tieneEdad6a12 = /\b(6|7|8|9|10|11|12)\s*años?\b/.test(p) || p.includes("seis años") || p.includes("siete años") || p.includes("ocho años") || p.includes("nueve años") || p.includes("diez años") || p.includes("once años") || p.includes("doce años") || p.includes("6 a 12");
+      // Edades
+      const tieneEdad3a5 = /\b(3|4|5)\s*años?\b/.test(p) || p.includes("tres años") || p.includes("cuatro años") || p.includes("cinco años");
+      const tieneEdad6a12 = /\b(6|7|8|9|10|11|12)\s*años?\b/.test(p) || p.includes("seis años") || p.includes("siete años") || p.includes("ocho años") || p.includes("nueve años") || p.includes("diez años") || p.includes("once años") || p.includes("doce años");
 
-      if (tieneEdad3a5 && (p.includes("hijo") || p.includes("hija") || p.includes("nene") || p.includes("nena") || p.includes("chico") || p.includes("chica") || p.includes("podria") || p.includes("puede") || p.includes("hacer") || p.includes("nivel") || p.includes("edad") || p.includes("para"))) {
-        return respuestas.edad3a5;
-      }
-      if (tieneEdad6a12 && (p.includes("hijo") || p.includes("hija") || p.includes("nene") || p.includes("nena") || p.includes("chico") || p.includes("chica") || p.includes("podria") || p.includes("puede") || p.includes("hacer") || p.includes("nivel") || p.includes("edad") || p.includes("para"))) {
-        return respuestas.edad6a12;
-      }
       if (tieneEdad3a5) return respuestas.edad3a5;
       if (tieneEdad6a12) return respuestas.edad6a12;
 
-      // Otras detecciones
-      if (p.includes("todo") || p.includes("toda la info") || p.includes("informacion completa") || p.includes("datos completos") || p.includes("toda la informacion")) return respuestas.todo;
-      if (p.includes("precio") || p.includes("cuesta") || p.includes("valor") || p.includes("costo") || p.includes("cuanto") || p.includes("mensual") || p.includes("mensualidad") || p.includes("abona") || p.includes("pagar") || p.includes("plata")) return respuestas.precio;
-      if (p.includes("donde") || p.includes("ubicacion") || p.includes("queda") || p.includes("direccion") || p.includes("palaa") || p.includes("avellaneda") || p.includes("local")) return respuestas.ubicacion;
-      if (p.includes("contacto") || p.includes("whatsapp") || p.includes("telefono") || p.includes("email") || p.includes("mail") || p.includes("escribir") || p.includes("numero") || p.includes("wsp")) return respuestas.contacto;
+      // Metodologías específicas
+      if (p.includes("desenchufada") || p.includes("sin pantalla") || p.includes("sin pantallas")) return respuestas.desenchufada;
+      if (p.includes("enchufada") || p.includes("con pantalla") || p.includes("programacion")) return respuestas.enchufada;
+
+      // Proyectos
+      if (p.includes("proyecto") || p.includes("proyectos") || p.includes("que construyen") || p.includes("que hacen los chicos") || p.includes("ejemplos") || p.includes("casa domotica") || p.includes("robot amigable") || p.includes("comedero") || p.includes("cesto")) return respuestas.proyectos;
+
+      // Resto
+      if (p.includes("todo") || p.includes("toda la info") || p.includes("informacion completa") || p.includes("datos completos")) return respuestas.todo;
+      if (p.includes("precio") || p.includes("cuesta") || p.includes("valor") || p.includes("costo") || p.includes("cuanto") || p.includes("mensual") || p.includes("mensualidad") || p.includes("pagar") || p.includes("plata")) return respuestas.precio;
+      if (p.includes("donde") || p.includes("ubicacion") || p.includes("queda") || p.includes("direccion") || p.includes("palaa") || p.includes("avellaneda") || p.includes("como llego") || p.includes("como llegar") || p.includes("como se llega") || p.includes("local")) return respuestas.ubicacion;
+      if (p.includes("contacto") || p.includes("whatsapp") || p.includes("telefono") || p.includes("email") || p.includes("mail") || p.includes("instagram") || p.includes("numero") || p.includes("wsp")) return respuestas.contacto;
       if (p.includes("inscrip") || p.includes("inscribir") || p.includes("anotar") || p.includes("consultar") || p.includes("como me") || p.includes("quiero anotar")) return respuestas.inscripciones;
-      if (p.includes("horario") || p.includes("cuando") || p.includes("dias") || p.includes("día") || p.includes("hora")) return respuestas.horario;
+      if (p.includes("horario") || p.includes("cuando") || p.includes("dias") || p.includes("dia") || p.includes("hora")) return respuestas.horario;
       if (p.includes("nivel") || p.includes("edad") || p.includes("edades") || p.includes("años") || p.includes("para que edad") || p.includes("de que edad")) return respuestas.niveles;
-      if (p.includes("profes") || p.includes("profesor") || p.includes("gabriel") || p.includes("gimena") || p.includes("docente") || p.includes("quien da") || p.includes("quienes son") || p.includes("quien enseña")) return respuestas.profes;
-      if (p.includes("que hacen") || p.includes("que hacemos") || p.includes("actividades") || p.includes("hacen en") || p.includes("se hace") || p.includes("que se hace") || p.includes("que aprenden")) return respuestas.queHacemos;
-      if (p.includes("porque") || p.includes("por que") || p.includes("elegir") || p.includes("ventaja") || p.includes("beneficio") || p.includes("diferencia")) return respuestas.porque;
+      if (p.includes("profes") || p.includes("profesor") || p.includes("gabriel") || p.includes("gimena") || p.includes("docente") || p.includes("quien da") || p.includes("quienes son")) return respuestas.profes;
+      if (p.includes("que hacen") || p.includes("que hacemos") || p.includes("actividades") || p.includes("se hace") || p.includes("que aprenden") || p.includes("desarrollan")) return respuestas.queHacemos;
+      if (p.includes("porque") || p.includes("por que") || p.includes("elegir") || p.includes("ventaja") || p.includes("beneficio") || p.includes("steam")) return respuestas.porque;
       if (p.includes("que es") || p.includes("gabot") || p.includes("taller") || p.includes("robotica") || p.includes("robot") || p.includes("hola") || p.includes("buenas") || p.includes("info")) return respuestas.queEs;
 
-      // Si tiene palabras relacionadas al taller, damos respuesta general
-      const palabrasTaller = ["gabot","robot","robotica","taller","nivel","edad","profes","profesor","gabriel","gimena","ubicacion","donde","queda","direccion","avellaneda","palaa","contacto","whatsapp","telefono","email","inscripcion","inscribir","precio","cuesta","valor","costo","horario","hijo","hija","nene","nena","años","chico","chica"];
+      const palabrasTaller = ["gabot","robot","robotica","taller","nivel","edad","profes","profesor","gabriel","gimena","ubicacion","donde","queda","direccion","avellaneda","palaa","contacto","whatsapp","telefono","email","inscripcion","precio","cuesta","valor","costo","horario","hijo","hija","nene","nena","años","chico","chica","proyecto","proyectos","desenchufada","enchufada"];
       if (palabrasTaller.some(w => p.includes(w))) return respuestas.queEs;
 
-      return null; // off-topic
+      return null;
     }
 
     const messagesEl = document.getElementById('messages');
@@ -355,7 +361,6 @@
       let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
       div.innerHTML = html;
       messagesEl.appendChild(div);
-      // Forzar scroll siempre
       requestAnimationFrame(() => {
         messagesEl.scrollTop = messagesEl.scrollHeight;
       });
@@ -364,9 +369,7 @@
     function showOfftopic(show) {
       offtopicBanner.classList.toggle('show', show);
       if (show) {
-        setTimeout(() => {
-          offtopicBanner.classList.remove('show');
-        }, 4500);
+        setTimeout(() => offtopicBanner.classList.remove('show'), 4500);
       }
     }
 
@@ -383,17 +386,16 @@
       setTimeout(() => {
         const respuesta = detectarRespuesta(text);
         if (respuesta === null) {
-          addMessage('Lo siento, solo puedo responder preguntas sobre el Taller de Robótica GABOT Kids. 😊\n\n¡Preguntame sobre nuestros talleres, niveles, profes, ubicación o cómo inscribirte!', false);
+          addMessage('Lo siento, solo puedo responder preguntas sobre el Taller de Robótica GABOT Kids. 😊\n\n¡Preguntame sobre nuestros talleres, niveles, proyectos, ubicación o cómo inscribirte!', false);
           showOfftopic(true);
         } else {
           addMessage(respuesta, false);
         }
         sendBtn.disabled = false;
         inputEl.focus();
-        // Asegurar scroll final
         setTimeout(() => {
           messagesEl.scrollTop = messagesEl.scrollHeight;
-        }, 100);
+        }, 80);
       }, 300);
     }
 

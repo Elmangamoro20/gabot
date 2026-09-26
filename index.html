@@ -10,18 +10,10 @@
       --verde: #00C853;
       --celeste: #00B4D8;
       --blanco: #FFFFFF;
-      --gris-claro: #F5F9FC;
       --rojo: #E53935;
       --sombra: 0 4px 20px rgba(10, 37, 64, 0.08);
     }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      -webkit-tap-highlight-color: transparent;
-    }
-
+    * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
     body {
       font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
       background: linear-gradient(160deg, #E8F7FC 0%, #F0FFF4 50%, #E8F7FC 100%);
@@ -31,8 +23,6 @@
       color: var(--azul-oscuro);
       overflow: hidden;
     }
-
-    /* Header */
     header {
       background: var(--blanco);
       padding: 12px 16px;
@@ -43,30 +33,10 @@
       z-index: 10;
       flex-shrink: 0;
     }
-
-    .logo-ia {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-ia svg {
-      width: 42px;
-      height: 42px;
-    }
-
-    .logo-ia h1 {
-      font-size: 1.25rem;
-      font-weight: 700;
-      letter-spacing: -0.5px;
-      color: var(--azul-oscuro);
-    }
-
-    .logo-ia span {
-      color: var(--verde);
-    }
-
-    /* Chat container */
+    .logo-ia { display: flex; align-items: center; gap: 10px; }
+    .logo-ia svg { width: 42px; height: 42px; }
+    .logo-ia h1 { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.5px; color: var(--azul-oscuro); }
+    .logo-ia span { color: var(--verde); }
     .chat-wrapper {
       flex: 1;
       display: flex;
@@ -77,8 +47,6 @@
       position: relative;
       overflow: hidden;
     }
-
-    /* Empty state with centered logo */
     .empty-state {
       flex: 1;
       display: flex;
@@ -90,50 +58,22 @@
       gap: 16px;
       animation: fadeIn 0.5s ease;
     }
-
-    .empty-state.hidden {
-      display: none;
-    }
-
+    .empty-state.hidden { display: none; }
     .empty-logo {
-      width: 90px;
-      height: 90px;
+      width: 90px; height: 90px;
       background: var(--blanco);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       box-shadow: var(--sombra);
       margin-bottom: 8px;
     }
-
-    .empty-logo svg {
-      width: 56px;
-      height: 56px;
-    }
-
-    .empty-state h2 {
-      font-size: 1.35rem;
-      font-weight: 700;
-      color: var(--azul-oscuro);
-    }
-
-    .empty-state p {
-      font-size: 0.95rem;
-      color: #5A6A7A;
-      max-width: 320px;
-      line-height: 1.45;
-    }
-
+    .empty-logo svg { width: 56px; height: 56px; }
+    .empty-state h2 { font-size: 1.35rem; font-weight: 700; color: var(--azul-oscuro); }
+    .empty-state p { font-size: 0.95rem; color: #5A6A7A; max-width: 320px; line-height: 1.45; }
     .suggestions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      justify-content: center;
-      margin-top: 12px;
-      max-width: 340px;
+      display: flex; flex-wrap: wrap; gap: 8px;
+      justify-content: center; margin-top: 12px; max-width: 380px;
     }
-
     .suggestion {
       background: var(--blanco);
       border: 1.5px solid var(--celeste);
@@ -145,13 +85,7 @@
       transition: all 0.2s;
       white-space: nowrap;
     }
-
-    .suggestion:hover {
-      background: var(--celeste);
-      color: white;
-    }
-
-    /* Messages area */
+    .suggestion:hover { background: var(--celeste); color: white; }
     #messages {
       flex: 1;
       overflow-y: auto;
@@ -161,11 +95,7 @@
       gap: 12px;
       scroll-behavior: smooth;
     }
-
-    #messages:empty {
-      display: none;
-    }
-
+    #messages:empty { display: none; }
     .message {
       max-width: 88%;
       padding: 12px 16px;
@@ -175,14 +105,12 @@
       animation: slideUp 0.3s ease;
       word-wrap: break-word;
     }
-
     .message.user {
       align-self: flex-end;
       background: var(--celeste);
       color: white;
       border-bottom-right-radius: 6px;
     }
-
     .message.bot {
       align-self: flex-start;
       background: var(--blanco);
@@ -190,12 +118,6 @@
       border-bottom-left-radius: 6px;
       box-shadow: 0 2px 8px rgba(0,0,0,0.04);
     }
-
-    .message.bot .emoji {
-      font-size: 1.1em;
-    }
-
-    /* Off-topic banner */
     .offtopic-banner {
       display: none;
       background: var(--rojo);
@@ -207,19 +129,13 @@
       animation: slideDown 0.3s ease;
       flex-shrink: 0;
     }
-
-    .offtopic-banner.show {
-      display: block;
-    }
-
-    /* Input area */
+    .offtopic-banner.show { display: block; }
     .input-area {
       background: var(--blanco);
       padding: 12px 16px 16px;
       border-top: 1px solid #E8EEF2;
       flex-shrink: 0;
     }
-
     .input-box {
       display: flex;
       gap: 10px;
@@ -230,11 +146,7 @@
       padding: 8px 8px 8px 18px;
       transition: border-color 0.2s;
     }
-
-    .input-box:focus-within {
-      border-color: var(--verde);
-    }
-
+    .input-box:focus-within { border-color: var(--verde); }
     #userInput {
       flex: 1;
       border: none;
@@ -248,69 +160,21 @@
       color: var(--azul-oscuro);
       font-family: inherit;
     }
-
-    #userInput::placeholder {
-      color: #9AA5B0;
-    }
-
+    #userInput::placeholder { color: #9AA5B0; }
     #sendBtn {
-      width: 42px;
-      height: 42px;
+      width: 42px; height: 42px;
       border-radius: 50%;
       border: none;
       background: var(--verde);
       color: white;
       cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      display: flex; align-items: center; justify-content: center;
       transition: background 0.2s, transform 0.15s;
       flex-shrink: 0;
     }
-
-    #sendBtn:hover:not(:disabled) {
-      background: #00A844;
-      transform: scale(1.05);
-    }
-
-    #sendBtn:disabled {
-      background: #B0BEC5;
-      cursor: not-allowed;
-    }
-
-    #sendBtn svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    /* Typing indicator */
-    .typing {
-      align-self: flex-start;
-      background: var(--blanco);
-      padding: 14px 18px;
-      border-radius: 18px;
-      border-bottom-left-radius: 6px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-      display: none;
-    }
-
-    .typing.show {
-      display: flex;
-      gap: 5px;
-    }
-
-    .typing span {
-      width: 8px;
-      height: 8px;
-      background: var(--celeste);
-      border-radius: 50%;
-      animation: bounce 1.2s infinite;
-    }
-
-    .typing span:nth-child(2) { animation-delay: 0.2s; }
-    .typing span:nth-child(3) { animation-delay: 0.4s; }
-
-    /* Footer note */
+    #sendBtn:hover:not(:disabled) { background: #00A844; transform: scale(1.05); }
+    #sendBtn:disabled { background: #B0BEC5; cursor: not-allowed; }
+    #sendBtn svg { width: 20px; height: 20px; }
     .footer-note {
       text-align: center;
       font-size: 0.72rem;
@@ -318,29 +182,9 @@
       padding: 6px 16px 10px;
       background: var(--blanco);
     }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(12px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes slideDown {
-      from { opacity: 0; transform: translateY(-10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes bounce {
-      0%, 60%, 100% { transform: translateY(0); }
-      30% { transform: translateY(-6px); }
-    }
-
-    /* Mobile adjustments */
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes slideDown { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 480px) {
       .logo-ia h1 { font-size: 1.1rem; }
       .empty-state h2 { font-size: 1.2rem; }
@@ -352,7 +196,6 @@
 <body>
   <header>
     <div class="logo-ia">
-      <!-- Logo de la IA (robot simple) -->
       <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
         <circle cx="32" cy="32" r="30" fill="#E8F7FC"/>
         <rect x="16" y="20" width="32" height="28" rx="8" fill="#0A2540"/>
@@ -371,7 +214,6 @@
   </div>
 
   <div class="chat-wrapper">
-    <!-- Empty state -->
     <div class="empty-state" id="emptyState">
       <div class="empty-logo">
         <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -389,21 +231,15 @@
       <div class="suggestions">
         <button class="suggestion" onclick="askSuggestion('¿Qué es GABOT Kids?')">¿Qué es GABOT Kids?</button>
         <button class="suggestion" onclick="askSuggestion('¿Cuáles son los niveles?')">Niveles de edad</button>
-        <button class="suggestion" onclick="askSuggestion('¿Quiénes son los profes?')">Los profes</button>
-        <button class="suggestion" onclick="askSuggestion('¿Cómo me inscribo?')">Cómo inscribirme</button>
+        <button class="suggestion" onclick="askSuggestion('Mi hijo tiene 4 años')">Mi hijo de 4 años</button>
+        <button class="suggestion" onclick="askSuggestion('¿Dónde queda?')">Ubicación</button>
+        <button class="suggestion" onclick="askSuggestion('¿Cuánto cuesta?')">Precio</button>
+        <button class="suggestion" onclick="askSuggestion('Contacto')">Contacto</button>
       </div>
     </div>
-
-    <!-- Messages -->
     <div id="messages"></div>
-
-    <!-- Typing -->
-    <div class="typing" id="typing">
-      <span></span><span></span><span></span>
-    </div>
   </div>
 
-  <!-- Input -->
   <div class="input-area">
     <div class="input-box">
       <textarea id="userInput" rows="1" placeholder="Escribí tu pregunta sobre el taller..." onkeydown="handleKey(event)"></textarea>
@@ -418,83 +254,78 @@
   </div>
 
   <script>
-    const API_KEY = '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';
-    const MODEL = 'meta-llama/llama-3.1-8b-instruct';
+    const respuestas = {
+      queEs: "¡Claro! Te cuento 😊\n\n🤖 **GABOT Kids** es un Taller de Robótica Educativa para niños y niñas de **3 a 12 años** en Avellaneda.\n\nAcá los chicos diseñan, construyen y programan robots mientras desarrollan creatividad, pensamiento lógico y habilidades para el futuro.\n\n💡 La mejor forma de aprender es **haciendo**. Cada encuentro es una aventura donde construyen robots, resuelven desafíos, programan movimientos y trabajan en equipo.\n\nNo hace falta tener conocimientos previos. Solo se necesita:\n• Curiosidad\n• Ganas de crear\n• Muchas ganas de divertirse 🚀\n\n¡Inscripciones abiertas!",
 
-    const SYSTEM_PROMPT = `Sos GABOT AI, el asistente oficial y amigable del Taller de Robótica Educativa GABOT Kids.
+      niveles: "Tenemos dos niveles según la edad 📚\n\n🟢 **Robótica Inicial (3 a 5 años)**\nMetodología de Robótica **Desenchufada**\nAntes de programar, los peques imaginan, construyen y descubren. Usamos juegos, cuentos y piezas grandes y seguras. Todo sin pantallas. Se desarrolla la creatividad, motricidad fina, comunicación y resolución de problemas.\n\n🔵 **Robótica y Programación (6 a 12 años)**\nMetodología de Robótica **Enchufada**\nLos chicos construyen robots, los programan y resuelven desafíos. Desarrollan pensamiento lógico, creatividad, autonomía y habilidades digitales para el futuro.\n\n¿Querés que te cuente más de algún nivel? 😊",
 
-REGLAS ESTRICTAS:
-1. SOLO respondés preguntas relacionadas con GABOT Kids (taller de robótica, niveles, profes, actividades, inscripciones, ubicación, contacto, beneficios, etc.).
-2. Si la pregunta NO tiene NADA que ver con el taller de robótica GABOT Kids, respondé EXACTAMENTE esto y nada más:
-[OFFTOPIC]
-3. Tus respuestas deben ser:
-   - Amigables, con paciencia y emojis divertidos 🤖✨🚀😊
-   - Profesionales y claras
-   - En español argentino (vos, chicos, etc.)
-   - Completas cuando te pidan todos los datos
+      edad3a5: "¡Perfecto! 🟢\n\nPara un niño o niña de **3 a 5 años** le corresponde el nivel **Robótica Inicial** (metodología desenchufada).\n\nEn este nivel:\n• Exploran la robótica con juegos, cuentos y construcciones\n• Usan piezas grandes y seguras\n• No usan pantallas\n• Desarrollan creatividad, motricidad fina, comunicación y resolución de problemas\n\nEs un espacio lúdico, divertido y adaptado a su edad. ¡Les encanta! 😊\n\n¿Querés el contacto para consultar horarios o inscribirlo?",
 
-INFORMACIÓN COMPLETA DEL TALLER:
+      edad6a12: "¡Genial! 🔵\n\nPara un niño o niña de **6 a 12 años** le corresponde el nivel **Robótica y Programación** (metodología enchufada).\n\nEn este nivel:\n• Construyen robots\n• Los programan\n• Resuelven desafíos y misiones\n• Desarrollan pensamiento lógico, creatividad, autonomía y habilidades digitales\n\n¡Se preparan para el futuro jugando! 🚀\n\n¿Querés el contacto para consultar horarios o inscribirlo?",
 
-Nombre: GABOT Kids – Taller de Robótica Educativa para niños y niñas
-Slogan: Construimos el futuro jugando
-Ubicación: Palaá 540, Dpto D - Avellaneda, Buenos Aires
-Edades: 3 a 12 años
-Inscripciones: ¡Abiertas!
+      profes: "¡Conocé a los profes! 👨‍🏫👩‍🏫\n\n**Gabriel**\nLic. en Enseñanzas con Nuevas Tecnologías, Profesor de nivel primario y especialista en Robótica Educativa.\nApasionado por la tecnología y la innovación. Acompaña a los chicos a desarrollar creatividad, pensamiento lógico y habilidades para resolver problemas con proyectos prácticos y divertidos.\n\n**Gimena**\nDocente Bilingüe de Nivel Inicial y formadora en metodología de robótica desenchufada.\nDiseña propuestas lúdicas motivadoras que fomentan la curiosidad, la creatividad y el trabajo en equipo, adaptadas a cada etapa del desarrollo infantil.\n\n¡Son geniales! 🌟",
 
-¿Qué es GABOT Kids?
-En GABOT Kids consideramos que la mejor forma de aprender es haciendo.
-Cada encuentro es una aventura donde los chicos construyen robots, resuelven desafíos, programan movimientos y trabajan en equipo mientras desarrollan habilidades para el futuro.
-No hace falta tener conocimientos previos.
-Solo hacen falta: Curiosidad, Ganas de crear y Muchas ganas de divertirse.
+      ubicacion: "📍 **Ubicación de GABOT Kids:**\n\nPalaá 540, Dpto D\nAvellaneda, Buenos Aires\n\n¡Estamos en pleno Avellaneda! 😊",
 
-Los Profes:
-- Gabriel: Lic. en Enseñanzas con Nuevas Tecnologías, Profesor de nivel primario y especialista en Robótica Educativa. Apasionado por la tecnología y la innovación, acompaña a los niños y niñas a desarrollar su creatividad, pensamiento lógico y habilidades para resolver problemas a través de proyectos prácticos y divertidos.
-- Gimena: Docente Bilingüe de Nivel Inicial, formadora en metodología de robótica desenchufada. Diseñadora de propuestas lúdicas motivadoras que fomentan la curiosidad, la creatividad y el trabajo en equipo, adaptada a cada etapa del desarrollo infantil.
+      contacto: "📞 **Contacto de GABOT Kids:**\n\n• WhatsApp: **11 6977 4483**\n• Email: **gabotkids@gmail.com**\n• Dirección: Palaá 540, Dpto D - Avellaneda, Buenos Aires\n• Web: https://www.gabotkids.com/\n\n¡Escribinos por WhatsApp que te respondemos rápido! 💬",
 
-¿Qué hacemos en cada taller?
-Los niños y niñas podrán:
-- Construir robots educativos
-- Resolver desafíos
-- Inventar sus propios proyectos
-- Aprender programación de manera fácil y divertida
-- Participar en misiones y competencias
-- Resolver problemas utilizando la creatividad
+      inscripciones: "¡Inscripciones **abiertas**! 🎉\n\nPodés consultar o inscribirte de estas formas:\n\n📱 WhatsApp: **11 6977 4483**\n📧 Email: **gabotkids@gmail.com**\n🌐 Web: https://www.gabotkids.com/ (botón CONSULTAR)\n\nNo hace falta tener conocimientos previos. ¡Solo ganas de aprender y divertirse! 🚀",
 
-Niveles:
-1. Robótica Inicial (3 a 5 años) – Metodología de Robótica Desenchufada
-Antes de aprender a programar, los niños y niñas necesitan imaginar, construir y descubrir. Exploran la robótica mediante juegos, cuentos y construcciones con piezas grandes y seguras que favorecen la creatividad, la motricidad fina, la comunicación y la resolución de problemas, todo en un entorno lúdico y sin pantallas.
+      precio: "💰 **Sobre el precio / costo:**\n\nEl valor de las clases lo tenés que consultar directamente con nosotros, porque puede variar según el nivel y la cantidad de encuentros.\n\n📱 Escribinos por WhatsApp al **11 6977 4483** y te pasamos toda la información actualizada.\n\n¡Estamos para ayudarte! 😊",
 
-2. Robótica y Programación (6 a 12 años) – Metodología de Robótica Enchufada
-Los niños y niñas construyen robots, los programan y resuelven desafíos mientras desarrollan pensamiento lógico, creatividad, autonomía y habilidades digitales que los preparan para el mundo del mañana.
+      queHacemos: "En cada taller los chicos pueden:\n\n🔧 Construir robots educativos\n🎯 Resolver desafíos\n💡 Inventar sus propios proyectos\n💻 Aprender programación de manera fácil y divertida\n🏆 Participar en misiones y competencias\n🧠 Resolver problemas usando la creatividad\n\nTodo mientras se divierten y desarrollan habilidades para el futuro. ¡Es una aventura! ✨",
 
-¿Por qué elegir GABOT Kids?
-Porque somos mucho más que un taller, somos un espacio donde los niños y niñas:
-- Experimentan: Toman contacto directo con herramientas y piezas reales, transformando sus ideas en algo concreto que pueden tocar y mover.
-- Se sorprenden: Viven la emoción de ver cómo un robot cobra vida gracias a su esfuerzo, reforzando su confianza y autoestima en cada clase.
-- Se equivocan: Entienden que el error es parte del proceso creativo, aprendiendo a buscar nuevas soluciones y a no rendirse ante los problemas.
+      porque: "¿Por qué elegir GABOT Kids? 🌟\n\nPorque somos mucho más que un taller. Acá los chicos:\n\n✨ **Experimentan**\nToman contacto directo con herramientas y piezas reales, transformando sus ideas en algo concreto que pueden tocar y mover.\n\n😲 **Se sorprenden**\nViven la emoción de ver cómo un robot cobra vida gracias a su esfuerzo, reforzando su confianza y autoestima.\n\n💪 **Se equivocan**\nEntienden que el error es parte del proceso creativo. Aprenden a buscar nuevas soluciones y a no rendirse.\n\n¡Construimos el futuro jugando! 🚀",
 
-Contacto:
-- WhatsApp: 11 6977 4483
-- Email: gabotkids@gmail.com
-- Dirección: Palaá 540, Dpto D - Avellaneda, Buenos Aires
-- Web: https://www.gabotkids.com/
+      horario: "📅 Sobre los **horarios**:\n\nLos horarios pueden variar según el grupo y la demanda.\n\nTe recomiendo consultar directamente por WhatsApp al **11 6977 4483** para que te digan los días y horarios disponibles según la edad de tu hijo/a.\n\n¡Te esperamos! 😊",
 
-Cuando te pidan "todos los datos" o información completa, resumí de forma ordenada y amigable todo lo anterior.
+      todo: "📋 **Toda la info de GABOT Kids:**\n\n🤖 **Qué es:** Taller de Robótica Educativa para niños y niñas de 3 a 12 años en Avellaneda. Diseñan, construyen y programan robots mientras desarrollan creatividad y pensamiento lógico.\n\n📍 **Ubicación:** Palaá 540, Dpto D - Avellaneda, Buenos Aires\n\n👨‍🏫 **Los profes:**\n• Gabriel (especialista en Robótica Educativa)\n• Gimena (Docente de Nivel Inicial y robótica desenchufada)\n\n📚 **Niveles:**\n• 3 a 5 años → Robótica Inicial (sin pantallas)\n• 6 a 12 años → Robótica y Programación\n\n📞 **Contacto:**\nWhatsApp: 11 6977 4483\nEmail: gabotkids@gmail.com\nWeb: www.gabotkids.com\n\n¡Inscripciones abiertas! 🎉"
+    };
 
-Siempre terminá invitando a consultar o inscribirse de forma cálida.`;
+    function detectarRespuesta(pregunta) {
+      const p = pregunta.toLowerCase()
+        .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+        .replace(/[¿?¡!.,]/g, " ");
+
+      // Detectar edades específicas
+      const tieneEdad3a5 = /\b(3|4|5)\s*años?\b/.test(p) || p.includes("tres años") || p.includes("cuatro años") || p.includes("cinco años") || p.includes("3 a 5") || p.includes("inicial");
+      const tieneEdad6a12 = /\b(6|7|8|9|10|11|12)\s*años?\b/.test(p) || p.includes("seis años") || p.includes("siete años") || p.includes("ocho años") || p.includes("nueve años") || p.includes("diez años") || p.includes("once años") || p.includes("doce años") || p.includes("6 a 12");
+
+      if (tieneEdad3a5 && (p.includes("hijo") || p.includes("hija") || p.includes("nene") || p.includes("nena") || p.includes("chico") || p.includes("chica") || p.includes("podria") || p.includes("puede") || p.includes("hacer") || p.includes("nivel") || p.includes("edad") || p.includes("para"))) {
+        return respuestas.edad3a5;
+      }
+      if (tieneEdad6a12 && (p.includes("hijo") || p.includes("hija") || p.includes("nene") || p.includes("nena") || p.includes("chico") || p.includes("chica") || p.includes("podria") || p.includes("puede") || p.includes("hacer") || p.includes("nivel") || p.includes("edad") || p.includes("para"))) {
+        return respuestas.edad6a12;
+      }
+      if (tieneEdad3a5) return respuestas.edad3a5;
+      if (tieneEdad6a12) return respuestas.edad6a12;
+
+      // Otras detecciones
+      if (p.includes("todo") || p.includes("toda la info") || p.includes("informacion completa") || p.includes("datos completos") || p.includes("toda la informacion")) return respuestas.todo;
+      if (p.includes("precio") || p.includes("cuesta") || p.includes("valor") || p.includes("costo") || p.includes("cuanto") || p.includes("mensual") || p.includes("mensualidad") || p.includes("abona") || p.includes("pagar") || p.includes("plata")) return respuestas.precio;
+      if (p.includes("donde") || p.includes("ubicacion") || p.includes("queda") || p.includes("direccion") || p.includes("palaa") || p.includes("avellaneda") || p.includes("local")) return respuestas.ubicacion;
+      if (p.includes("contacto") || p.includes("whatsapp") || p.includes("telefono") || p.includes("email") || p.includes("mail") || p.includes("escribir") || p.includes("numero") || p.includes("wsp")) return respuestas.contacto;
+      if (p.includes("inscrip") || p.includes("inscribir") || p.includes("anotar") || p.includes("consultar") || p.includes("como me") || p.includes("quiero anotar")) return respuestas.inscripciones;
+      if (p.includes("horario") || p.includes("cuando") || p.includes("dias") || p.includes("día") || p.includes("hora")) return respuestas.horario;
+      if (p.includes("nivel") || p.includes("edad") || p.includes("edades") || p.includes("años") || p.includes("para que edad") || p.includes("de que edad")) return respuestas.niveles;
+      if (p.includes("profes") || p.includes("profesor") || p.includes("gabriel") || p.includes("gimena") || p.includes("docente") || p.includes("quien da") || p.includes("quienes son") || p.includes("quien enseña")) return respuestas.profes;
+      if (p.includes("que hacen") || p.includes("que hacemos") || p.includes("actividades") || p.includes("hacen en") || p.includes("se hace") || p.includes("que se hace") || p.includes("que aprenden")) return respuestas.queHacemos;
+      if (p.includes("porque") || p.includes("por que") || p.includes("elegir") || p.includes("ventaja") || p.includes("beneficio") || p.includes("diferencia")) return respuestas.porque;
+      if (p.includes("que es") || p.includes("gabot") || p.includes("taller") || p.includes("robotica") || p.includes("robot") || p.includes("hola") || p.includes("buenas") || p.includes("info")) return respuestas.queEs;
+
+      // Si tiene palabras relacionadas al taller, damos respuesta general
+      const palabrasTaller = ["gabot","robot","robotica","taller","nivel","edad","profes","profesor","gabriel","gimena","ubicacion","donde","queda","direccion","avellaneda","palaa","contacto","whatsapp","telefono","email","inscripcion","inscribir","precio","cuesta","valor","costo","horario","hijo","hija","nene","nena","años","chico","chica"];
+      if (palabrasTaller.some(w => p.includes(w))) return respuestas.queEs;
+
+      return null; // off-topic
+    }
 
     const messagesEl = document.getElementById('messages');
     const emptyState = document.getElementById('emptyState');
-    const typingEl = document.getElementById('typing');
     const inputEl = document.getElementById('userInput');
     const sendBtn = document.getElementById('sendBtn');
     const offtopicBanner = document.getElementById('offtopicBanner');
 
-    let conversationHistory = [
-      { role: 'system', content: SYSTEM_PROMPT }
-    ];
-
-    // Auto-resize textarea
     inputEl.addEventListener('input', () => {
       inputEl.style.height = 'auto';
       inputEl.style.height = Math.min(inputEl.scrollHeight, 120) + 'px';
@@ -520,25 +351,26 @@ Siempre terminá invitando a consultar o inscribirse de forma cálida.`;
     function addMessage(text, isUser) {
       hideEmpty();
       const div = document.createElement('div');
-      div.className = `message ${isUser ? 'user' : 'bot'}`;
-      div.innerHTML = text.replace(/\n/g, '<br>');
+      div.className = 'message ' + (isUser ? 'user' : 'bot');
+      let html = text.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>').replace(/\n/g, '<br>');
+      div.innerHTML = html;
       messagesEl.appendChild(div);
-      messagesEl.scrollTop = messagesEl.scrollHeight;
-    }
-
-    function showTyping(show) {
-      typingEl.classList.toggle('show', show);
-      if (show) messagesEl.scrollTop = messagesEl.scrollHeight;
+      // Forzar scroll siempre
+      requestAnimationFrame(() => {
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      });
     }
 
     function showOfftopic(show) {
       offtopicBanner.classList.toggle('show', show);
       if (show) {
-        setTimeout(() => offtopicBanner.classList.remove('show'), 6000);
+        setTimeout(() => {
+          offtopicBanner.classList.remove('show');
+        }, 4500);
       }
     }
 
-    async function sendMessage() {
+    function sendMessage() {
       const text = inputEl.value.trim();
       if (!text) return;
 
@@ -546,65 +378,26 @@ Siempre terminá invitando a consultar o inscribirse de forma cálida.`;
       inputEl.value = '';
       inputEl.style.height = 'auto';
       sendBtn.disabled = true;
-      showTyping(true);
       showOfftopic(false);
 
-      conversationHistory.push({ role: 'user', content: text });
-
-      try {
-        const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${API_KEY}`,
-            'Content-Type': 'application/json',
-            'HTTP-Referer': 'https://elmangamoro20.github.io/gabot/',
-            'X-Title': 'GABOT AI Chat'
-          },
-          body: JSON.stringify({
-            model: MODEL,
-            messages: conversationHistory,
-            temperature: 0.7,
-            max_tokens: 1024
-          })
-        });
-
-        const data = await response.json();
-
-        if (!response.ok || data.error) {
-          const errMsg = data.error?.message || 'Error en la API';
-          throw new Error(errMsg);
-        }
-
-        let botReply = data.choices?.[0]?.message?.content || 'Ups, no pude generar una respuesta 😅';
-
-        // Detectar offtopic
-        if (botReply.trim().startsWith('[OFFTOPIC]') || botReply.includes('[OFFTOPIC]')) {
-          botReply = 'Lo siento, solo puedo responder preguntas sobre el Taller de Robótica GABOT Kids. 😊\n\n¡Preguntame sobre nuestros talleres, niveles, profes o cómo inscribirte!';
+      setTimeout(() => {
+        const respuesta = detectarRespuesta(text);
+        if (respuesta === null) {
+          addMessage('Lo siento, solo puedo responder preguntas sobre el Taller de Robótica GABOT Kids. 😊\n\n¡Preguntame sobre nuestros talleres, niveles, profes, ubicación o cómo inscribirte!', false);
           showOfftopic(true);
+        } else {
+          addMessage(respuesta, false);
         }
-
-        conversationHistory.push({ role: 'assistant', content: botReply });
-        addMessage(botReply, false);
-
-      } catch (err) {
-        console.error(err);
-        let msg = 'Uy, hubo un problemita técnico 😅. Intentá de nuevo en un momento.';
-        if (err.message && err.message.includes('Failed to fetch')) {
-          msg = '⚠️ No se pudo conectar con la IA.\n\nEsto pasa porque el archivo se abrió de forma local.\n\nSubilo a GitHub Pages o Netlify y va a funcionar.';
-        } else if (err.message) {
-          msg = 'Error: ' + err.message + '\n\nIntentá de nuevo en un momento 😅';
-        }
-        addMessage(msg, false);
-      } finally {
-        showTyping(false);
         sendBtn.disabled = false;
         inputEl.focus();
-      }
+        // Asegurar scroll final
+        setTimeout(() => {
+          messagesEl.scrollTop = messagesEl.scrollHeight;
+        }, 100);
+      }, 300);
     }
 
-    // Focus input on load
     inputEl.focus();
   </script>
 </body>
 </html>
-
